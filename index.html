@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>无记 · Deep</title>
+    <meta name="description" content="深挖一个问题。">
+    <meta property="og:title" content="无记 · Deep">
+    <meta property="og:description" content="深挖一个问题。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jeekeagle.github.io/wuji-deep-hub">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23faf7f0'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='52' font-family='serif' fill='%231a1a1a'%3E深%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+SC:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <!-- 无记 · Deep v1.0.0 -->
+</head>
+<body>
+
+    <header class="site-header">
+        <h1 class="logo"><a href="https://jeekeagle.github.io/wuji/">无 记</a></h1>
+        <nav class="primary-nav" aria-label="主导航">
+            <ul>
+                <li><a href="https://jeekeagle.github.io/wuji/" target="_self">home</a></li>
+                <li><a href="https://jeekeagle.github.io/wuji-blog/" target="_blank" rel="noopener">Post</a></li>
+                <li><a href="https://jeekeagle.github.io/zero-perspective-hub/" target="_blank" rel="noopener">视角</a></li>
+                <li class="active"><a href="https://jeekeagle.github.io/wuji-deep-hub/" aria-current="page">Deep</a></li>
+                <li><a href="https://jeekeagle.github.io/wuji-books/" target="_blank" rel="noopener">Books</a></li>
+                <li><a href="https://jeekeagle.github.io/wuji-flow/" target="_blank" rel="noopener">Flow</a></li>
+                            </ul>
+        </nav>
+    </header>
+
+    <main class="page-content">
+        <h2 class="page-title">Deep</h2>
+        <p class="page-sub">深挖一个问题。</p>
+
+        <p class="deep-intro">一个主题,反复切入。慢一点,深一点。<br>这里是 wuji 的第二大脑。</p>
+
+        <ul class="deep-grid" id="deepGrid">
+            <!-- TODO: <li class="deep-card"> ... </li> -->
+        </ul>
+    </main>
+
+    <script>
+        // Empty-state fallback. Only renders when deepGrid has zero <li> children at load.
+        (function () {
+            var grid = document.getElementById('deepGrid');
+            if (!grid || grid.children.length > 0) return;
+            var empty = document.createElement('li');
+            empty.className = 'deep-empty';
+            empty.textContent = '还没有主题。';
+            grid.appendChild(empty);
+        })();
+    </script>
+</body>
+</html>
